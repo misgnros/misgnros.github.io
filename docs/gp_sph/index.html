@@ -1,0 +1,860 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Sphinx＋Github Pagesで個人ページ作成 &#8212; misgnros.github.io  documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=df4b10f6"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'gp_sph';</script>
+    <link rel="search" title="Search" href="../search/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+    <meta name="docbuild:last-update" content="%b %d, %Y"/>
+
+
+
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search/"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">misgnros.github.io</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="misgnros.github.io/docs/blog/index.html">
+                    Posts
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://ablog.readthedocs.io/en/stable/">
+                    ABlog Documentation
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="misgnros.github.io/docs/blog/index.html">
+                    Posts
+                  </a>
+                </li>
+                
+
+                <li class="nav-item">
+                  <a class="nav-link nav-external" href="https://ablog.readthedocs.io/en/stable/">
+                    ABlog Documentation
+                  </a>
+                </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page">Sphinx＋Githu...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+<section id="sphinx-github-pages">
+<h1>Sphinx＋Github Pagesで個人ページ作成<a class="headerlink" href="#sphinx-github-pages" title="Permalink to this heading">#</a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>以下は個人的備忘録としての側面が強いため，解説記事としては不足が多いです．また，書いた人間はいわゆるIT業界で働いているわけではなく，技術系ブログを書いた経験もなく，プログラミングはなるべくやりたくないと考えています．</p>
+</div>
+<p>細かい設定はさておき，このウェブサイト風のものを再現したいだけのときは，<a class="reference internal" href="#flow">ここ</a>から先のみ見ればよい．</p>
+<section id="id1">
+<h2>動機<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Github Pagesで個人ページを作成する際，Markdown＋Jekyllで作成するのが簡便である．検索しても多くの場合その情報が出てくる．また，そもそもGithub PagesではデフォルトでJekyllをサポートしている．しかしここではSphinxのみを使用する．その理由は以下の3点である．</p>
+<ul class="simple">
+<li><p>Jekyllがよくわからなかった</p></li>
+<li><p>Sphinxを勉強したかった（結局Sphinxもよくわからなかった）</p></li>
+<li><p>Dockerを勉強したかった（後述するがSphinxはsphinx-docコンテナを使用したが当然よくわからなかった）</p></li>
+</ul>
+<p>上記のように，よくわからなかったのでSphinxそのものの解説はここでは書かない．</p>
+<p>なお，Sphinxはそもそも個人ページというよりは公式ドキュメントやマニュアル向けの色が強い．なので使用目的がずれているという指摘はごもっともかもしれないがそれは置いておく．</p>
+<p>ほかにはHugoという選択肢もあるようで，これはこれで簡単そうで気になるがこれから検討ということにしておく．</p>
+</section>
+<section id="id2">
+<h2>導入<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>Dockerを使用する．Docker Hubからイメージsphinxdoc/sphinxをpullする．いろいろライブラリを追加したいため最終的にはDockerfileでイメージを作成するが，一応書いておく．</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>pull<span class="w"> </span>sphinxdoc/sphinx
+</pre></div>
+</div>
+<p>検索すると，様々な先駆者たちが工夫を凝らしたSphinxのイメージが見つかるが，これもよくわからない．試したいくらいの人はまずはsphinxdoc/sphinxで，何か追加したくなったら自分でDockerfileを書き，それでも足りなかったら先駆者たちのを参照すればよいと思われる．</p>
+<section id="sphinxdoc">
+<span id="basicspdoc"></span><h3>sphinxdocの基本コマンド<a class="headerlink" href="#sphinxdoc" title="Permalink to this heading">#</a></h3>
+<p>作業ディレクトリ直下にいるとする．また，後でDockerfileを書いてイメージを作るが，そのとき<code class="docutils literal notranslate"><span class="pre">sphinxdoc/sphinx</span></code>の部分はそのコンテナ名もしくはIDにする．なおこのページは後述のABlogを使用するため以下のコマンドでは生成していないが，一応書いておく．</p>
+<ul class="simple">
+<li><p>プロジェクトの生成</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/docs<span class="w"> </span>sphinxdoc/sphinx<span class="w"> </span>sphinx-quickstart
+</pre></div>
+</div>
+<p>プロジェクト名など聞かれるので適宜入力する．</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>ここで，quickstartしたときにソースと同じ階層にビルド先を置くか（デフォルト），ソースとビルド先を別にするか選ぶことができる．</p>
+</div>
+<ul class="simple">
+<li><p>htmlの生成</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/docs<span class="w"> </span>sphinxdoc/sphinx<span class="w"> </span>make<span class="w"> </span>html
+</pre></div>
+</div>
+<p>もしくは,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/docs<span class="w"> </span>sphinxdoc/sphinx<span class="w"> </span>sphinx-build<span class="w"> </span>-b<span class="w"> </span>html<span class="w"> </span>sourcedir<span class="w"> </span>builddir
+</pre></div>
+</div>
+<p>sourcedirはソースファイル置き場，builddirはビルドしたhtmlなどの置き場．</p>
+<p>makeコマンドが基本は手軽だが，ソースディレクトリやビルドディレクトリをデフォルトでないところにしたいなど，いろいろいじりたい場合はsphinx-buildで直接指定したほうが楽かもしれない．sphinx-quickstartで生成されたmake.batをいじればそれもmakeでできるのかもしれないがよくわからなかった．</p>
+<p>またDockerよくわからないので一応書いておくと，プロジェクトの生成で書いているがhtml生成では書いていないオプション<code class="docutils literal notranslate"><span class="pre">-it</span></code>はinputの<code class="docutils literal notranslate"><span class="pre">-i</span></code> とttyの <code class="docutils literal notranslate"><span class="pre">-t</span></code> をあわせたものである．要はターミナルとかに何か入力する必要があるから書くオプションである．実際にプロジェクトの生成をすると，プロジェクト名とか言語設定など入力を求められる．</p>
+<p>以下，イメージのしやすさのためsphinx-quickstart時点での作業ディレクトリ構成を示しておく．ただしこれは<code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">html</span></code>した場合である．</p>
+<ul class="simple">
+<li><p>ソースとビルド先を別ディレクトリにしたとき</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
+├── Makefile
+├── build
+│   ├── doctrees
+│   └── html
+├── make.bat
+└── source
+    ├── _static
+    ├── _templates
+    ├── conf.py
+    └── index.rst
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>ソースと同じ階層にビルド先があるとき（デフォルト）</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
+├── Makefile
+├── _build
+├── _static
+├── _templates
+├── conf.py
+├── index.rst
+└── make.bat
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3>各種設定<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>個人的に最低限必須と感じられる設定についてまとめる．一般に，「最低限必須と感じられる」ことは時間とともに増えていくとされている．</p>
+<section id="jekyll">
+<h4>Jekyll無効化<a class="headerlink" href="#jekyll" title="Permalink to this heading">#</a></h4>
+<p>Github PagesはデフォルトでJekyllをサポートしているため，何もせずSphinxで作成したプロジェクトをgit pushしてもアンダースコアで始まるファイル等は無視されるらしい．するとウェブページのようなものは表示されるがCSSとかが完全に無視された状態になるらしい．<a class="reference external" href="https://nikkie-ftnext.hatenablog.com/entry/do-you-know-sphinx-ext-githubpages#Sphinx%E3%81%A8GitHub-Pages%E3%82%92%E4%B8%80%E7%B7%92%E3%81%AB%E4%BD%BF%E3%81%86%E3%81%A8%E3%81%8D%E3%81%AE%E8%90%BD%E3%81%A8%E3%81%97%E7%A9%B4">参考</a>．</p>
+<p>そこで.nojekyllというファイルを作成すればこれを回避できるらしい．Sphinxはデフォルトでこれをサポートしている．</p>
+<p>具体的には，conf.pyのextentionsに以下を追記．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="c1"># ... </span>
+ <span class="s2">&quot;sphinx.ext.githubpages&quot;</span><span class="p">,</span>
+<span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h4>テーマのインストール<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<p>好みのテーマをインストールする．<a class="reference internal" href="#settingtheme">次節</a>参照．</p>
+</section>
+<section id="id5">
+<h4>自動ビルド（失敗）<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<p>やりたかったができなかった．Dockerfileでsphinx-autobuildをインストールし，ビルドしてhttp://127.0.0.1:8000/にアクセスしても接続できない．適当に検索した情報では原因を突き止めきれず．必須ではないので諦めた．要再確認．</p>
+</section>
+<section id="markdown">
+<h4>Markdown対応<a class="headerlink" href="#markdown" title="Permalink to this heading">#</a></h4>
+<p>Dockerfileでmyst-parserをインストール．</p>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>myst-parser
+</pre></div>
+</div>
+<p>conf.pyに以下を追記．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="c1"># ... </span>
+ <span class="s2">&quot;myst_parser&quot;</span><span class="p">,</span>
+<span class="c1"># ...</span>
+<span class="p">]</span>
+<span class="n">myst_include</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;*.md&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>reSTをもう使わない，Markdown一本で突き進む場合は以下を追記（ここではやっていない）．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">source_suffix</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;.rst&quot;</span><span class="p">,</span> <span class="s2">&quot;.md&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>数式などでいろいろ凝りたい場合は拡張機能を入れることで簡単に解決するかもしれない．<a class="reference external" href="https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-amsmath">ここ</a>を確認してconf.pyに<code class="docutils literal notranslate"><span class="pre">myst_enable_extensions</span> <span class="pre">=</span> <span class="pre">[&quot;my_extension&quot;]</span></code>で随時追加していく．</p>
+</section>
+<section id="ablog">
+<span id="id6"></span><h4>ABlogの導入<a class="headerlink" href="#ablog" title="Permalink to this heading">#</a></h4>
+<p>PyDataテーマはABlogをサポートしているらしいので，インストールしておく．日本語の情報として<a class="reference external" href="https://water2litter.net/pisco/doc/ablog_start.html">ここ</a>などを参照．</p>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>ablog
+</pre></div>
+</div>
+<p>conf.pyに以下を追記．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="c1"># ... </span>
+ <span class="s2">&quot;ablog&quot;</span><span class="p">,</span>
+<span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="sphinx-desgin">
+<h4>sphinx-desginの導入<a class="headerlink" href="#sphinx-desgin" title="Permalink to this heading">#</a></h4>
+<p>今回使用するPyDataテーマにはいろいろなデザインの何かが仕込まれている．デザインにはまったく興味がないので何も説明できないが，<a class="reference external" href="https://pydata-sphinx-theme.readthedocs.io/en/latest/">公式ドキュメント</a>を見ていろいろ試すと楽しいのかもしれない．試すには追加で該当パッケージをインストールする必要があるが，sphinx-designを入れておけばだいたい大丈夫と思われる．</p>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinx-design
+</pre></div>
+</div>
+<p>conf.pyに以下を追記．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="c1"># ... </span>
+ <span class="s2">&quot;sphinx_design&quot;</span><span class="p">,</span>
+<span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="mermaid">
+<h4>mermaidを使えるようにする<a class="headerlink" href="#mermaid" title="Permalink to this heading">#</a></h4>
+<p>便利．使う可能性が高いので該当パッケージを入れておく．</p>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinxcontrib.mermaid
+</pre></div>
+</div>
+<p>conf.pyに以下を追記．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="c1"># ... </span>
+ <span class="s2">&quot;sphinxcontrib.mermaid&quot;</span><span class="p">,</span>
+<span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h4>コードブロックのコピーボタン<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinx-copybutton
+</pre></div>
+</div>
+<p>conf.pyに以下を追記．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
+<span class="c1"># ... </span>
+ <span class="s2">&quot;sphinx_copybutton&quot;</span><span class="p">,</span>
+<span class="c1"># ...</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="dockerfile">
+<span id="id8"></span><h3>最終的なDockerfile<a class="headerlink" href="#dockerfile" title="Permalink to this heading">#</a></h3>
+<p>前項までを踏まえて以下のようなDockerfileでイメージを作成する．</p>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">sphinxdoc/sphinx</span>
+
+<span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip
+<span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pydata-sphinx-theme
+<span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinx-autobuild
+<span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>myst-parser
+<span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>ablog
+<span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinx-design
+<span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinxcontrib.mermaid
+<span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>sphinx-copybutton
+</pre></div>
+</div>
+<p>RUNが続くところはrequirements.txtでやっていればかっこいいらしいが，まあいいかという精神でベタ書きしている．また厳密にはLABELだのENVだの書くべきらしい．</p>
+</section>
+</section>
+<section id="settingtheme">
+<span id="id9"></span><h2>テーマの設定<a class="headerlink" href="#settingtheme" title="Permalink to this heading">#</a></h2>
+<p>Sphinxに元から入っているテーマ（<a class="reference external" href="https://sphinx-themes.org/">Sphinx Themes Gallery</a>でdefaultとかbuiltinとか書かれているもの）を使用したければ，conf.pyの<code class="docutils literal notranslate"><span class="pre">html_theme</span></code>の部分を使用テーマの名前に書き換えるだけでよい．</p>
+<p>今回は，builtinではない<a class="reference external" href="https://pydata-sphinx-theme.readthedocs.io/en/latest/">PyDataテーマ</a>を使用するのでそれを<a class="reference internal" href="#dockerfile">前節</a>に書いたようにインストールしている必要がある．</p>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">RUN</span><span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>pydata-sphinx-theme
+</pre></div>
+</div>
+<p>conf.pyに以下を記述．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme</span> <span class="o">=</span> <span class="s1">&#39;pydata_sphinx_theme&#39;</span>
+</pre></div>
+</div>
+<p>少しいじってみた限り，PyDataテーマは個人的にはリッチすぎて使いこなせてない気もするが，他によさそうなものが見つからないのでこれで進める．</p>
+<p>どうでもいいが，PyDataテーマのドキュメント自体はJekyll製のように思われる．conf.pyのextentionに”sphinx.ext.githubpages”がないし，リポジトリのdocs以下を見ると普通にMarkdownファイルが置いてある．よくわからないが，Sphinxはスタイル関連ファイルの作成にのみ使ったということか．</p>
+</section>
+<section id="mypage">
+<span id="id10"></span><h2>ABlogで個人ページ風にする<a class="headerlink" href="#mypage" title="Permalink to this heading">#</a></h2>
+<section id="id11">
+<h3>ABlogの基本コマンド<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
+<p>PyDataテーマではABlog専用のコマンドを使用しなくとも，通常のコマンドでビルドするだけでブログ的なものを作ることができるようだがよくわからなかった．</p>
+<p>ここではABlog専用のコマンドでやっていく．基本的には以下の2つ．</p>
+<ul class="simple">
+<li><p>プロジェクトの生成</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/docs<span class="w"> </span>mysphinx<span class="w"> </span>ablog<span class="w"> </span>start
+</pre></div>
+</div>
+<p>プロジェクト名など聞かれるので適宜入力する．</p>
+<ul class="simple">
+<li><p>htmlの生成</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/docs<span class="w"> </span>mysphinx<span class="w"> </span>ablog<span class="w"> </span>build
+</pre></div>
+</div>
+<p>もしくは，</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/docs<span class="w"> </span>mysphinx<span class="w"> </span>ablog<span class="w"> </span>build<span class="w"> </span>-s<span class="w"> </span>sourcedir<span class="w"> </span>-w<span class="w"> </span>builddir
+</pre></div>
+</div>
+<p><a class="reference internal" href="#basicspdoc">sphinxdocの基本コマンド</a>と同様，ソースディレクトリとビルドディレクトリをデフォルトでないところに設定できる．</p>
+</section>
+<section id="id12">
+<h3>一覧ページの設定<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<p>通常のブログのように，全記事の一覧ページが作成される．デフォルトではビルド先にblogというディレクトリのindex.htmlである．変更したい場合はconf.pyで以下のように変える．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># blog_path = &quot;blog&quot;</span>
+<span class="n">blog_path</span> <span class="o">=</span> <span class="s2">&quot;posts&quot;</span>
+</pre></div>
+</div>
+<p>なおここではデフォルトのblogのままとする．</p>
+<p>一覧ページのリンクをトップページのヘッダ（ナビゲーションバー？）に置きたいとする．これは，こちらがMarkdownやreSTのソースからSphinxビルドで出したものではないため，外部リンクとして書くほかないような気がする．index.rstにtoctreeとか書いてある部分があり，ここに書いた文書をリストアップしておくのが基本的な書き方として想定されているが，PyDataテーマではあくまでソースディレクトリ内にあるものがtoctreeには入れられるように思われる．そこで普通に外部リンクとして扱う．conf.pyで以下のように書く．</p>
+<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
+<span class="c1"># ...</span>
+  <span class="s2">&quot;external_links&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;./blog/index.html&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Posts&quot;</span><span class="p">,</span>
+      <span class="p">}</span>
+  <span class="p">],</span>
+<span class="c1"># ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>reST形式のトップページの本文中でリンクを書きたいときは次のようにする．</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="s">`Link to posts </span><span class="si">&lt;blog/index.html&gt;</span><span class="s">`_</span>
+</pre></div>
+</div>
+<p>PyDataテーマの公式ドキュメントではわざわざ<a class="reference external" href="https://pydata-sphinx-theme.readthedocs.io/en/latest/user_guide/ablog.html">ボタンなんかをこしらえている</a>．</p>
+</section>
+</section>
+<section id="flow">
+<span id="id13"></span><h2>最終的な作業フロー<a class="headerlink" href="#flow" title="Permalink to this heading">#</a></h2>
+<section id="id14">
+<h3>初回のみ<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
+<section id="docker">
+<h4>Dockerイメージ作成<a class="headerlink" href="#docker" title="Permalink to this heading">#</a></h4>
+<p>Dockerfileがあるところで以下を実行．</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>mysphinx<span class="w"> </span>.
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">mysphinx</span></code>は好きな名前に．</p>
+</section>
+<section id="id15">
+<h4>プロジェクト作成<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h4>
+<p>作業ディレクトリ直下で以下を実行．</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/docs<span class="w"> </span>mysphinx<span class="w"> </span>ablog<span class="w"> </span>start
+</pre></div>
+</div>
+</section>
+<section id="docs">
+<span id="changeouputdir"></span><h4>ビルド先をdocsに変更<a class="headerlink" href="#docs" title="Permalink to this heading">#</a></h4>
+<p>作業ディレクトリ直下で以下を実行．</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>docs
+</pre></div>
+</div>
+</section>
+<section id="source">
+<h4>ソース置き場をsourceに変更<a class="headerlink" href="#source" title="Permalink to this heading">#</a></h4>
+<p>作業ディレクトリ直下で以下を実行．</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span><span class="nb">source</span>
+</pre></div>
+</div>
+</section>
+<section id="index-rstconf-py">
+<h4>index.rstとconf.pyを移動<a class="headerlink" href="#index-rstconf-py" title="Permalink to this heading">#</a></h4>
+<p>作業ディレクトリ直下で以下を実行．</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv<span class="w"> </span>index.rst<span class="w"> </span>./source
+mv<span class="w"> </span>conf.py<span class="w"> </span>./source
+</pre></div>
+</div>
+<p>もとのビルド先_websiteやその他サンプルファイルも適宜削除．</p>
+</section>
+<section id="id16">
+<h4>見た目を整える<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
+<p><a class="reference internal" href="#settingtheme">テーマの設定</a>や<a class="reference internal" href="#mypage">個人ページ風にする</a>で書いたようなことに加え，ナビゲーションバー，サイドバーなどややこしいことが多くある．そこは各自よいようにやっておく．</p>
+</section>
+<section id="git">
+<h4>Git初期化<a class="headerlink" href="#git" title="Permalink to this heading">#</a></h4>
+<p>あなたのGithubリポジトリのURLをyourURLとして，以下を実行．</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>init
+git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;yaruzo&quot;</span>
+git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>yourURL
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>通常，HTTPSがSSHか選べる．HTTPSにした場合，Githubのアカウントとパスワードの入力を求められるが，パスワードといってもアクセストークンに最近なったらしい．そしてpushのたびに（たぶん）毎回入力が求められる．アクセストークンにはfine-grainedなんたらとPersonal access token(classic)みたいなのと2種類ある．前者は要は権限をいろいろ細かく設定でき，後者も権限をいろいろ設定できるがfine-grainedよりは一括で選択などができるものになっている（たぶん）．</p>
+<p>SSHにした場合，いったん鍵の設定をしておけば毎回パスワードの入力などは不要．</p>
+</div>
+</section>
+</section>
+<section id="id17">
+<h3>文書作成<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
+<p>書いたらsourceに入れる．タグを入れないとABlogに記事と認識されないので以下のように入れる．なおindex.rst以外基本的にMarkdownで書くとしているのでMarkdownのもの．</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
+<span class="n">blogpost</span><span class="p">:</span> <span class="n">true</span>
+<span class="n">date</span><span class="p">:</span> <span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span>
+<span class="n">author</span><span class="p">:</span> <span class="n">author1</span>
+<span class="n">location</span><span class="p">:</span> <span class="n">World</span>
+<span class="n">category</span><span class="p">:</span> <span class="n">Theory</span>
+<span class="n">tags</span><span class="p">:</span> <span class="n">tag1</span><span class="p">,</span><span class="n">tag2</span>
+<span class="n">language</span><span class="p">:</span> <span class="n">English</span>
+<span class="o">---</span>
+</pre></div>
+</div>
+<p>一応，reSTは以下．</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">post</span><span class="p">::</span> Apr 15, 2014
+   <span class="nc">:tags:</span> tag1,tag2
+   <span class="nc">:category:</span> Theory
+   <span class="nc">:author:</span> author1
+   <span class="nc">:location:</span> World
+   <span class="nc">:language:</span> English
+</pre></div>
+</div>
+<p>以下でもよいらしい．</p>
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="nc">:blogpost:</span> true
+<span class="nc">:date:</span> Oct 10, 2020
+<span class="nc">:author:</span> author1
+<span class="nc">:location:</span> World
+<span class="nc">:category:</span> Theory
+<span class="nc">:tags:</span> tag1,tag2
+<span class="nc">:language:</span> English
+</pre></div>
+</div>
+</section>
+<section id="id18">
+<h3>ビルドする<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
+<p>作業ディレクトリ直下で以下を実行．</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/docs<span class="w"> </span>mysphinx<span class="w"> </span>ablog<span class="w"> </span>-s<span class="w"> </span><span class="nb">source</span><span class="w"> </span>-w<span class="w"> </span>docs
+</pre></div>
+</div>
+</section>
+<section id="push">
+<h3>pushする<a class="headerlink" href="#push" title="Permalink to this heading">#</a></h3>
+<p>作業ディレクトリ直下で以下を実行．</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;yattazo&quot;</span>
+git<span class="w"> </span>push
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+<div class="section ablog__blog_comments">
+  
+  
+
+
+<div class="section ablog__prev-next">
+  <span class="ablog__prev">
+    
+  </span>
+  <span class="ablog__spacer">&nbsp;</span>
+  <span class="ablog__next">
+    
+  </span>
+</div>
+
+  
+  
+</div>
+
+                </article>
+              
+              
+              
+              
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">動機</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">導入</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinxdoc">sphinxdocの基本コマンド</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">各種設定</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jekyll">Jekyll無効化</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">テーマのインストール</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">自動ビルド（失敗）</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown">Markdown対応</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ablog">ABlogの導入</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#sphinx-desgin">sphinx-desginの導入</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#mermaid">mermaidを使えるようにする</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">コードブロックのコピーボタン</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dockerfile">最終的なDockerfile</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#settingtheme">テーマの設定</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mypage">ABlogで個人ページ風にする</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">ABlogの基本コマンド</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">一覧ページの設定</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#flow">最終的な作業フロー</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">初回のみ</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#docker">Dockerイメージ作成</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">プロジェクト作成</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#docs">ビルド先をdocsに変更</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#source">ソース置き場をsourceに変更</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#index-rstconf-py">index.rstとconf.pyを移動</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">見た目を整える</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git初期化</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id17">文書作成</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id18">ビルドする</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#push">pushする</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/gp_sph.md.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2024, misgnros.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.1.2.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.2.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
