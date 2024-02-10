@@ -214,7 +214,7 @@ html_theme = 'pydata_sphinx_theme'
 html_theme_options = {
   "external_links": [
       {
-          "url": "https://misgnros.github.io/docs/blog/index.html",
+          "url": "https://misgnros.github.io/blog/index.html",
           "name": "Posts",
         },
       {

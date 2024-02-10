@@ -260,7 +260,7 @@ html_theme_options = {
 # ...
   "external_links": [
       {
-          "url": "./blog/index.html",
+          "url": "https://misgnros.github.io/blog/index.html",
           "name": "Posts",
       }
   ],
