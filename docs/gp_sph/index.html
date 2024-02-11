@@ -409,9 +409,9 @@ document.write(`
 <p>個人的に最低限必須と感じられる設定についてまとめる．一般に，「最低限必須と感じられる」ことは時間とともに増えていくとされている．</p>
 <section id="jekyll">
 <h4>Jekyll無効化<a class="headerlink" href="#jekyll" title="Permalink to this heading">#</a></h4>
-<p>Github PagesはデフォルトでJekyllをサポートしているため，何もせずSphinxで作成したプロジェクトをgit pushしてもアンダースコアで始まるファイル等は無視されるらしい．するとウェブページのようなものは表示されるがCSSとかが完全に無視された状態になるらしい．<a class="reference external" href="https://nikkie-ftnext.hatenablog.com/entry/do-you-know-sphinx-ext-githubpages#Sphinx%E3%81%A8GitHub-Pages%E3%82%92%E4%B8%80%E7%B7%92%E3%81%AB%E4%BD%BF%E3%81%86%E3%81%A8%E3%81%8D%E3%81%AE%E8%90%BD%E3%81%A8%E3%81%97%E7%A9%B4">参考</a>．</p>
+<p>Github PagesはデフォルトでJekyllをサポートしているため，何もせずSphinxで作成したプロジェクトをpushしてもアンダースコアで始まるファイル等は無視されるらしい．するとウェブページのようなものは表示されるがCSSとかが完全に無視された状態になるらしい．<a class="reference external" href="https://nikkie-ftnext.hatenablog.com/entry/do-you-know-sphinx-ext-githubpages#Sphinx%E3%81%A8GitHub-Pages%E3%82%92%E4%B8%80%E7%B7%92%E3%81%AB%E4%BD%BF%E3%81%86%E3%81%A8%E3%81%8D%E3%81%AE%E8%90%BD%E3%81%A8%E3%81%97%E7%A9%B4">参考</a>．</p>
 <p>そこで.nojekyllというファイルを作成すればこれを回避できるらしい．Sphinxはデフォルトでこれをサポートしている．</p>
-<p>具体的には，conf.pyのextentionsに以下を追記．</p>
+<p>具体的には，conf.pyの<code class="docutils literal notranslate"><span class="pre">extentions</span></code>に以下を追記．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span>
 <span class="c1"># ... </span>
  <span class="s2">&quot;sphinx.ext.githubpages&quot;</span><span class="p">,</span>
@@ -426,7 +426,11 @@ document.write(`
 </section>
 <section id="id5">
 <h4>自動ビルド（失敗）<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
-<p>やりたかったができなかった．Dockerfileでsphinx-autobuildをインストールし，ビルドしてhttp://127.0.0.1:8000/にアクセスしても接続できない．適当に検索した情報では原因を突き止めきれず．必須ではないので諦めた．要再確認．</p>
+<p>やりたかったができなかった．</p>
+<div class="admonition error">
+<p class="admonition-title">Error</p>
+<p>Dockerfileでsphinx-autobuildをインストールし，ビルドしてhttp://127.0.0.1:8000/にアクセスしても接続できない．適当に検索した情報では原因を突き止めきれず．必須ではないので諦めた．要再確認．</p>
+</div>
 </section>
 <section id="markdown">
 <h4>Markdown対応<a class="headerlink" href="#markdown" title="Permalink to this heading">#</a></h4>
@@ -539,7 +543,7 @@ document.write(`
 </pre></div>
 </div>
 <p>少しいじってみた限り，PyDataテーマは個人的にはリッチすぎて使いこなせてない気もするが，他によさそうなものが見つからないのでこれで進める．</p>
-<p>どうでもいいが，PyDataテーマのドキュメント自体はJekyll製のように思われる．conf.pyのextentionに”sphinx.ext.githubpages”がないし，リポジトリのdocs以下を見ると普通にMarkdownファイルが置いてある．よくわからないが，Sphinxはスタイル関連ファイルの作成にのみ使ったということか．</p>
+<p>どうでもいいが，PyDataテーマのドキュメント自体はJekyll製のように思われる（たぶん）．conf.pyの<code class="docutils literal notranslate"><span class="pre">extentions</span></code>に<code class="docutils literal notranslate"><span class="pre">&quot;sphinx.ext.githubpages&quot;</span></code>がないし，リポジトリのdocs以下を見ると普通にMarkdownファイルが置いてある．よくわからないが，Sphinxはスタイル関連ファイルの作成にのみ使ったということか？</p>
 </section>
 <section id="mypage">
 <span id="id10"></span><h2>ABlogで個人ページ風にする<a class="headerlink" href="#mypage" title="Permalink to this heading">#</a></h2>
@@ -568,18 +572,18 @@ document.write(`
 </section>
 <section id="id12">
 <h3>一覧ページの設定<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
-<p>通常のブログのように，全記事の一覧ページが作成される．デフォルトではビルド先にblogというディレクトリのindex.htmlである．変更したい場合はconf.pyで以下のように変える．</p>
+<p>通常のブログのように，全記事の一覧ページが作成される．デフォルトではビルド先に<code class="docutils literal notranslate"><span class="pre">blog</span></code>というディレクトリのindex.htmlである．変更したい場合はconf.pyで以下のように変える．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="c1"># blog_path = &quot;blog&quot;</span>
 <span class="n">blog_path</span> <span class="o">=</span> <span class="s2">&quot;posts&quot;</span>
 </pre></div>
 </div>
-<p>なおここではデフォルトのblogのままとする．</p>
-<p>一覧ページのリンクをトップページのヘッダ（ナビゲーションバー？）に置きたいとする．これは，こちらがMarkdownやreSTのソースからSphinxビルドで出したものではないため，外部リンクとして書くほかないような気がする．index.rstにtoctreeとか書いてある部分があり，ここに書いた文書をリストアップしておくのが基本的な書き方として想定されているが，PyDataテーマではあくまでソースディレクトリ内にあるものがtoctreeには入れられるように思われる．そこで普通に外部リンクとして扱う．conf.pyで以下のように書く．</p>
+<p>なおここではデフォルトの<code class="docutils literal notranslate"><span class="pre">blog</span></code>のままとする．</p>
+<p>一覧ページのリンクをトップページのヘッダ（ナビゲーションバー？）に置きたいとする．これは，こちらがMarkdownやreSTのソースからSphinxビルドで出したものではないため，外部リンクとして書くほかないような気がする．index.rstに<code class="docutils literal notranslate"><span class="pre">toctree</span></code>とか書いてある部分があり，ここに書いた文書をリストアップしておくのが基本的な書き方として想定されているが，PyDataテーマではあくまでソースディレクトリ内にあるものが<code class="docutils literal notranslate"><span class="pre">toctree</span></code>には入れられるように思われる．そこで普通に外部リンクとして扱う．conf.pyで以下のように書く．</p>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">html_theme_options</span> <span class="o">=</span> <span class="p">{</span>
 <span class="c1"># ...</span>
   <span class="s2">&quot;external_links&quot;</span><span class="p">:</span> <span class="p">[</span>
       <span class="p">{</span>
-          <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://misgnros.github.io/blog/index.html&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;./blog/index.html&quot;</span><span class="p">,</span>
           <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Posts&quot;</span><span class="p">,</span>
       <span class="p">}</span>
   <span class="p">],</span>
@@ -620,18 +624,18 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="source">
-<h4>ソース置き場をsourceに変更<a class="headerlink" href="#source" title="Permalink to this heading">#</a></h4>
+<section id="src">
+<h4>ソース置き場をsrcに変更<a class="headerlink" href="#src" title="Permalink to this heading">#</a></h4>
 <p>作業ディレクトリ直下で以下を実行．</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span><span class="nb">source</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>src
 </pre></div>
 </div>
 </section>
 <section id="index-rstconf-py">
 <h4>index.rstとconf.pyを移動<a class="headerlink" href="#index-rstconf-py" title="Permalink to this heading">#</a></h4>
 <p>作業ディレクトリ直下で以下を実行．</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv<span class="w"> </span>index.rst<span class="w"> </span>./source
-mv<span class="w"> </span>conf.py<span class="w"> </span>./source
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv<span class="w"> </span>index.rst<span class="w"> </span>./src
+mv<span class="w"> </span>conf.py<span class="w"> </span>./src
 </pre></div>
 </div>
 <p>もとのビルド先_websiteやその他サンプルファイルも適宜削除．</p>
@@ -650,8 +654,8 @@ git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </s
 git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
 </pre></div>
 </div>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>通常，HTTPSがSSHか選べる．HTTPSにした場合，Githubのアカウントとパスワードの入力を求められるが，パスワードといってもアクセストークンに最近なったらしい．そしてpushのたびに（たぶん）毎回入力が求められる．アクセストークンにはfine-grainedなんたらとPersonal access token(classic)みたいなのと2種類ある．前者は要は権限をいろいろ細かく設定でき，後者も権限をいろいろ設定できるがfine-grainedよりは一括で選択などができるものになっている（たぶん）．</p>
 <p>SSHにした場合，いったん鍵の設定をしておけば毎回パスワードの入力などは不要．</p>
 </div>
@@ -659,7 +663,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 </section>
 <section id="id17">
 <h3>文書作成<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
-<p>書いたらsourceに入れる．タグを入れないとABlogに記事と認識されないので以下のように入れる．なおindex.rst以外基本的にMarkdownで書くとしているのでMarkdownのもの．</p>
+<p>書いたらsrcに入れる．タグを入れないとABlogに記事と認識されないので以下のように入れる．なおindex.rst以外基本的にMarkdownで書くとしているのでMarkdownのもの．</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">---</span>
 <span class="n">blogpost</span><span class="p">:</span> <span class="n">true</span>
 <span class="n">date</span><span class="p">:</span> <span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span>
@@ -672,7 +676,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 </pre></div>
 </div>
 <p>一応，reSTは以下．</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">post</span><span class="p">::</span> Apr 15, 2014
+<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">post</span><span class="p">::</span> YYYY-MM-DD
    <span class="nc">:tags:</span> tag1,tag2
    <span class="nc">:category:</span> Theory
    <span class="nc">:author:</span> author1
@@ -682,7 +686,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 </div>
 <p>以下でもよいらしい．</p>
 <div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="nc">:blogpost:</span> true
-<span class="nc">:date:</span> Oct 10, 2020
+<span class="nc">:date:</span> YYYY-MM-DD
 <span class="nc">:author:</span> author1
 <span class="nc">:location:</span> World
 <span class="nc">:category:</span> Theory
@@ -694,7 +698,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 <section id="id18">
 <h3>ビルドする<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
 <p>作業ディレクトリ直下で以下を実行．</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/docs<span class="w"> </span>mysphinx<span class="w"> </span>ablog<span class="w"> </span>-s<span class="w"> </span><span class="nb">source</span><span class="w"> </span>-w<span class="w"> </span>docs
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span><span class="nv">$PWD</span>:/docs<span class="w"> </span>mysphinx<span class="w"> </span>ablog<span class="w"> </span>build<span class="w"> </span>-s<span class="w"> </span>src<span class="w"> </span>-w<span class="w"> </span>docs
 </pre></div>
 </div>
 </section>
@@ -778,7 +782,7 @@ git<span class="w"> </span>push
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#docker">Dockerイメージ作成</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id15">プロジェクト作成</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#docs">ビルド先をdocsに変更</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#source">ソース置き場をsourceに変更</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#src">ソース置き場をsrcに変更</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#index-rstconf-py">index.rstとconf.pyを移動</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id16">見た目を整える</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#git">Git初期化</a></li>

@@ -91,11 +91,11 @@ makeコマンドが基本は手軽だが，ソースディレクトリやビル�
 ### 各種設定
 個人的に最低限必須と感じられる設定についてまとめる．一般に，「最低限必須と感じられる」ことは時間とともに増えていくとされている．
 #### Jekyll無効化
-Github PagesはデフォルトでJekyllをサポートしているため，何もせずSphinxで作成したプロジェクトをgit pushしてもアンダースコアで始まるファイル等は無視されるらしい．するとウェブページのようなものは表示されるがCSSとかが完全に無視された状態になるらしい．[参考](https://nikkie-ftnext.hatenablog.com/entry/do-you-know-sphinx-ext-githubpages#Sphinx%E3%81%A8GitHub-Pages%E3%82%92%E4%B8%80%E7%B7%92%E3%81%AB%E4%BD%BF%E3%81%86%E3%81%A8%E3%81%8D%E3%81%AE%E8%90%BD%E3%81%A8%E3%81%97%E7%A9%B4)．
+Github PagesはデフォルトでJekyllをサポートしているため，何もせずSphinxで作成したプロジェクトをpushしてもアンダースコアで始まるファイル等は無視されるらしい．するとウェブページのようなものは表示されるがCSSとかが完全に無視された状態になるらしい．[参考](https://nikkie-ftnext.hatenablog.com/entry/do-you-know-sphinx-ext-githubpages#Sphinx%E3%81%A8GitHub-Pages%E3%82%92%E4%B8%80%E7%B7%92%E3%81%AB%E4%BD%BF%E3%81%86%E3%81%A8%E3%81%8D%E3%81%AE%E8%90%BD%E3%81%A8%E3%81%97%E7%A9%B4)．
 
 そこで.nojekyllというファイルを作成すればこれを回避できるらしい．Sphinxはデフォルトでこれをサポートしている．
 
-具体的には，conf.pyのextentionsに以下を追記．
+具体的には，conf.pyの`extentions`に以下を追記．
 ```Python
 extensions = [
 # ... 
@@ -108,7 +108,10 @@ extensions = [
 好みのテーマをインストールする．[次節](#settingtheme)参照．
 
 #### 自動ビルド（失敗）
-やりたかったができなかった．Dockerfileでsphinx-autobuildをインストールし，ビルドしてhttp://127.0.0.1:8000/にアクセスしても接続できない．適当に検索した情報では原因を突き止めきれず．必須ではないので諦めた．要再確認．
+やりたかったができなかった．
+```{error}
+Dockerfileでsphinx-autobuildをインストールし，ビルドしてhttp://127.0.0.1:8000/にアクセスしても接続できない．適当に検索した情報では原因を突き止めきれず．必須ではないので諦めた．要再確認．
+```
 
 #### Markdown対応
 Dockerfileでmyst-parserをインストール．
@@ -220,7 +223,7 @@ html_theme = 'pydata_sphinx_theme'
 
 少しいじってみた限り，PyDataテーマは個人的にはリッチすぎて使いこなせてない気もするが，他によさそうなものが見つからないのでこれで進める．
 
-どうでもいいが，PyDataテーマのドキュメント自体はJekyll製のように思われる．conf.pyのextentionに"sphinx.ext.githubpages"がないし，リポジトリのdocs以下を見ると普通にMarkdownファイルが置いてある．よくわからないが，Sphinxはスタイル関連ファイルの作成にのみ使ったということか．
+どうでもいいが，PyDataテーマのドキュメント自体はJekyll製のように思われる（たぶん）．conf.pyの`extentions`に`"sphinx.ext.githubpages"`がないし，リポジトリのdocs以下を見ると普通にMarkdownファイルが置いてある．よくわからないが，Sphinxはスタイル関連ファイルの作成にのみ使ったということか？
 
 (mypage)=
 ## ABlogで個人ページ風にする
@@ -247,20 +250,20 @@ docker run --rm -v $PWD:/docs mysphinx ablog build -s sourcedir -w builddir
 [sphinxdocの基本コマンド](#basicspdoc)と同様，ソースディレクトリとビルドディレクトリをデフォルトでないところに設定できる．
 
 ### 一覧ページの設定
-通常のブログのように，全記事の一覧ページが作成される．デフォルトではビルド先にblogというディレクトリのindex.htmlである．変更したい場合はconf.pyで以下のように変える．
+通常のブログのように，全記事の一覧ページが作成される．デフォルトではビルド先に`blog`というディレクトリのindex.htmlである．変更したい場合はconf.pyで以下のように変える．
 ```Python
 # blog_path = "blog"
 blog_path = "posts"
 ```
-なおここではデフォルトのblogのままとする．
+なおここではデフォルトの`blog`のままとする．
 
-一覧ページのリンクをトップページのヘッダ（ナビゲーションバー？）に置きたいとする．これは，こちらがMarkdownやreSTのソースからSphinxビルドで出したものではないため，外部リンクとして書くほかないような気がする．index.rstにtoctreeとか書いてある部分があり，ここに書いた文書をリストアップしておくのが基本的な書き方として想定されているが，PyDataテーマではあくまでソースディレクトリ内にあるものがtoctreeには入れられるように思われる．そこで普通に外部リンクとして扱う．conf.pyで以下のように書く．
+一覧ページのリンクをトップページのヘッダ（ナビゲーションバー？）に置きたいとする．これは，こちらがMarkdownやreSTのソースからSphinxビルドで出したものではないため，外部リンクとして書くほかないような気がする．index.rstに`toctree`とか書いてある部分があり，ここに書いた文書をリストアップしておくのが基本的な書き方として想定されているが，PyDataテーマではあくまでソースディレクトリ内にあるものが`toctree`には入れられるように思われる．そこで普通に外部リンクとして扱う．conf.pyで以下のように書く．
 ```Python
 html_theme_options = {
 # ...
   "external_links": [
       {
-          "url": "https://misgnros.github.io/blog/index.html",
+          "url": "./blog/index.html",
           "name": "Posts",
       }
   ],
@@ -297,17 +300,17 @@ docker run -it --rm -v $PWD:/docs mysphinx ablog start
 mkdir docs
 ```
 
-#### ソース置き場をsourceに変更
+#### ソース置き場をsrcに変更
 作業ディレクトリ直下で以下を実行．
 ```bash
-mkdir source
+mkdir src
 ```
 
 #### index.rstとconf.pyを移動
 作業ディレクトリ直下で以下を実行．
 ```bash
-mv index.rst ./source
-mv conf.py ./source
+mv index.rst ./src
+mv conf.py ./src
 ```
 もとのビルド先_websiteやその他サンプルファイルも適宜削除．
 #### 見た目を整える
@@ -323,13 +326,13 @@ git remote add origin yourURL
 git push -u origin main
 ```
 
-```{Attention}
+```{Note}
 通常，HTTPSがSSHか選べる．HTTPSにした場合，Githubのアカウントとパスワードの入力を求められるが，パスワードといってもアクセストークンに最近なったらしい．そしてpushのたびに（たぶん）毎回入力が求められる．アクセストークンにはfine-grainedなんたらとPersonal access token(classic)みたいなのと2種類ある．前者は要は権限をいろいろ細かく設定でき，後者も権限をいろいろ設定できるがfine-grainedよりは一括で選択などができるものになっている（たぶん）．
 
 SSHにした場合，いったん鍵の設定をしておけば毎回パスワードの入力などは不要．
 ```
 ### 文書作成
-書いたらsourceに入れる．タグを入れないとABlogに記事と認識されないので以下のように入れる．なおindex.rst以外基本的にMarkdownで書くとしているのでMarkdownのもの．
+書いたらsrcに入れる．タグを入れないとABlogに記事と認識されないので以下のように入れる．なおindex.rst以外基本的にMarkdownで書くとしているのでMarkdownのもの．
 ```
 ---
 blogpost: true
@@ -344,7 +347,7 @@ language: English
 
 一応，reSTは以下．
 ```rst
-.. post:: Apr 15, 2014
+.. post:: YYYY-MM-DD
    :tags: tag1,tag2
    :category: Theory
    :author: author1
@@ -354,7 +357,7 @@ language: English
  以下でもよいらしい．
  ```rst
 :blogpost: true
-:date: Oct 10, 2020
+:date: YYYY-MM-DD
 :author: author1
 :location: World
 :category: Theory
@@ -364,7 +367,7 @@ language: English
 ### ビルドする
 作業ディレクトリ直下で以下を実行．
 ```bash
-docker run --rm -v $PWD:/docs mysphinx ablog -s source -w docs
+docker run --rm -v $PWD:/docs mysphinx ablog build -s src -w docs
 ```
 
 ### pushする
