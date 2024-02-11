@@ -43,7 +43,7 @@ docker run -it --rm -v $PWD:/docs sphinxdoc/sphinx sphinx-quickstart
 ```
 
 プロジェクト名など聞かれるので適宜入力する．
-```{Attention}
+```{Note}
 ここで，quickstartしたときにソースと同じ階層にビルド先を置くか（デフォルト），ソースとビルド先を別にするか選ぶことができる．
 ```
 
@@ -303,7 +303,7 @@ mkdir docs
 #### ソース置き場をsrcに変更
 作業ディレクトリ直下で以下を実行．
 ```bash
-mkdir src
+mkdir srcf
 ```
 
 #### index.rstとconf.pyを移動
