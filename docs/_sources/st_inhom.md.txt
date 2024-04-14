@@ -20,7 +20,7 @@ The following discussion is not rigorous in mathematical sense. I tried to descr
 ## Notations and setup
 Consider a random variable $X$. $x$ is a some value that random variable $X$ can take. Probability of $X=x$ is expressed $p_X(x)$. In the same way, a capital letter indicates a random variable and small letter indicates a some value. 
 
-A stochastic process $\{X_t\}_t$ is defined by a sequence of random variables $X_1, X_2, \ldots X_T$ , where $T$ is a positive inetger. $\{X_t\}_t$ is called Markov process when $X_{t+1}$ is affected only $X_t$, a variable at the previous time step. Thus, joint probability is,
+A stochastic process $\{X_t\}_t$ is defined by a sequence of random variables $X_1, X_2, \ldots ,X_T$ , where $T$ is a positive inetger. $\{X_t\}_t$ is called Markov process when $X_{t+1}$ is affected only $X_t$, a variable at the previous time step. Thus, joint probability is,
 
 $$
 p_{X_{1:T}}(x_{1:T}) = \prod_{t=1}^{T-1} p_{X_{t+1}|X_t} (x_{t+1}|x_t) p_{X_1}(x_1).
