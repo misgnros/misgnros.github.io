@@ -14,7 +14,8 @@ I'm a KAISHAINN (a kind of NINJA) in Japan.
 
 In this website, I would like to post articles on the topics I have studied, such as mathematics, physics, and computer science.
 
-**All posts are here**: `Posts <blog/index.html>`_
+**All posts are here:** `Posts <blog/index.html>`_
+
 
 Recent posts
 ------------

@@ -203,6 +203,23 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README.md']
 # インクルードパスを設定
 myst_include = ["*.md"]
 
+# myst_parserの拡張
+myst_enable_extensions = [
+    "amsmath",
+    "attrs_inline",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "fieldlist",
+    "html_admonition",
+    "html_image",
+    #"linkify",
+    "replacements",
+    "smartquotes",
+    "strikethrough",
+    "substitution",
+    "tasklist",
+]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -220,6 +237,10 @@ html_theme_options = {
       {
             "url": "https://ablog.readthedocs.io/en/stable/",
             "name": "ABlog Documentation",
+        },
+      {
+          "url": "https://myst-parser.readthedocs.io/en/latest/",
+          "name": "MyST-parser Documentation",
         },
 
     ],

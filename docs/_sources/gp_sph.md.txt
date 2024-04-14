@@ -1,10 +1,9 @@
 ---
 blogpost: true
 date: 2024-02-10 # YYYY-MM-DD
-# author: misgnros
-category: Technical
+category: technical
 tags: Sphinx, Github Pages
-language: Japanese
+language: ja
 ---
 
 # Sphinx＋Github Pagesで個人ページ作成
