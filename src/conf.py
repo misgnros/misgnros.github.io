@@ -242,7 +242,6 @@ html_theme_options = {
           "url": "https://myst-parser.readthedocs.io/en/latest/",
           "name": "MyST-parser Documentation",
         },
-
     ],
   "show_prev_next": False,
   "logo": {
@@ -250,6 +249,11 @@ html_theme_options = {
 #        "image_dark": "_static/logo-dark.svg",
     },
 }
+
+html_theme_options["analytics"] = {
+    "google_analytics_id": "G-06Z6FZYZYE",
+}
+
 
 # setting primary sidebar in index page
 html_sidebars = {
