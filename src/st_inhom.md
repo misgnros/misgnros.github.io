@@ -7,11 +7,9 @@ language: en
 --- 
 
 # Existence of a unique stationary distribution for a time-inhomogeneous Markov process
-A unique stationary distribution exists for a Markov process under some conditions.
+Time-homogeneous Markov processes have time-independent transition probabilities(or rates). Although many textbooks discuss proofs that time-homogeneous Markov processes have unique stationary distributions, that of time-**inhomogeneous** ones are rarely seen(as far as I know, information on web is kind rather than textbooks)[^wiki][^mathoverflow].
 
-Time-homogeneous Markov processes have time-independent transition probabilities(or rates). Although many textbooks discuss proofs that time-homogeneous Markov processes have unique stationary distributions, that of time-**inhomogeneous** ones are not so common(as far as I know, information on web is kind rather than textbooks)[^wiki][^mathoverflow].
-
-In the following, we discuss a proof for time-inhomogeneous Markov processes. This problem is significant for some MCMC algorithms utilizing time-inhomogeneity.
+In the following, I discuss a proof for time-inhomogeneous Markov processes. This problem is significant for some MCMC algorithms utilizing time-inhomogeneity.
 
 ```{Attention}
 The following discussion is not rigorous in mathematical sense. I tried to describe as far as intuitive. However I assumed basics of the probability theory, such as the terms conditional probability, joint probability, and so on. 
@@ -66,9 +64,9 @@ Time-inhomogeneous Markov processes can be mapped to time-homogeneous Markov pro
 
 Let $\{X_t\}_t (t=1,2,\ldots)$  is a time-inhomogeneous Markov process. Then, the two-dimensional random variable $Y_{t} = (X_t, t)$ obeys a time-homogeneous process.
 
-Here, we introduce a parameter $\tau := t$, which means time for a process $\{ Y_{\tau} \}_{\tau}=\{ X_{\tau}, t_{\tau} \}_{\tau}$ (where $p(t_{\tau})=\delta_{t,\tau}$), because regarding $t$ like an independent random variable makes the discussion clear.
+Here, I introduce a parameter $\tau := t$, which means time for a process $\{ Y_{\tau} \}_{\tau}=\{ X_{\tau}, t_{\tau} \}_{\tau}$ (where $p(t_{\tau})=\delta_{t,\tau}$), because regarding $t$ like an independent random variable makes the discussion clear.
 
-Starting from one-step evolution,  we show the transition probabiliy for $\{ Y_{\tau} \}_{\tau}$ is independent of time $\tau$ as follows.
+Starting from one-step evolution,  I show the transition probabiliy for $\{ Y_{\tau} \}_{\tau}$ is independent of time $\tau$ as follows.
 
 ```{math}
 p_{Y_{\tau+1}, Y_{\tau}}(y_{\tau+1}, y_{\tau}) &= p_{Y_{\tau+1}|Y_{\tau}}(y_{\tau+1}|y_{\tau}) p_{Y_{\tau}}(y_{\tau}) \\
@@ -80,13 +78,13 @@ p_{Y_{\tau+1}, Y_{\tau}}(y_{\tau+1}, y_{\tau}) &= p_{Y_{\tau+1}|Y_{\tau}}(y_{\ta
 \rightarrow p_{Y_{\tau+1}|Y_{\tau}}(y_{\tau+1}|y_{\tau})&= p_{X_{t+1}|X_{t}}(x_{t+1}|x_{t})
 ```
 
-Assuming the conditions finiteness, aperiodicity, and irreducibility for time-homogeneous process $\{ Y_{\tau} \}_{\tau}$,  it has a unique stationary distribution $p^{\mathrm{st}}_Y$. We obtain a unique stationary distribution for $\{ X_t \}_t$ by margnalizing $t$ of $p^{\mathrm{st}}_Y$.
+Assuming the conditions finiteness, aperiodicity, and irreducibility for time-homogeneous process $\{ Y_{\tau} \}_{\tau}$,  it has a unique stationary distribution $p^{\mathrm{st}}_Y$. A unique stationary distribution is obtained for $\{ X_t \}_t$ by margnalizing $t$ of $p^{\mathrm{st}}_Y$.
 
 ```{math}
 \sum_t p^{\mathrm{st}}_Y = p^{\mathrm{st}}_X
 ```
 
-Finally we get our target $p^{\mathrm{st}}_X$,  a unique stationary distribution for time-**inhomogeneous** Markov process.
+Finally I get our target $p^{\mathrm{st}}_X$,  a unique stationary distribution for time-**inhomogeneous** Markov process.
 
 [^wiki]: [https://en.wikipedia.org/wiki/Discrete-time_Markov_chain#Steady-state_analysis_and_the_time-inhomogeneous_Markov_chain](https://en.wikipedia.org/wiki/Discrete-time_Markov_chain#Steady-state_analysis_and_the_time-inhomogeneous_Markov_chain)
 

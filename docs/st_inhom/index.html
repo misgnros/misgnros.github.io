@@ -345,9 +345,8 @@ document.write(`
                   
 <section class="tex2jax_ignore mathjax_ignore" id="existence-of-a-unique-stationary-distribution-for-a-time-inhomogeneous-markov-process">
 <h1>Existence of a unique stationary distribution for a time-inhomogeneous Markov process<a class="headerlink" href="#existence-of-a-unique-stationary-distribution-for-a-time-inhomogeneous-markov-process" title="Permalink to this heading">#</a></h1>
-<p>A unique stationary distribution exists for a Markov process under some conditions.</p>
-<p>Time-homogeneous Markov processes have time-independent transition probabilities(or rates). Although many textbooks discuss proofs that time-homogeneous Markov processes have unique stationary distributions, that of time-<strong>inhomogeneous</strong> ones are not so common(as far as I know, information on web is kind rather than textbooks)<a class="footnote-reference brackets" href="#wiki" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#mathoverflow" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
-<p>In the following, we discuss a proof for time-inhomogeneous Markov processes. This problem is significant for some MCMC algorithms utilizing time-inhomogeneity.</p>
+<p>Time-homogeneous Markov processes have time-independent transition probabilities(or rates). Although many textbooks discuss proofs that time-homogeneous Markov processes have unique stationary distributions, that of time-<strong>inhomogeneous</strong> ones are rarely seen(as far as I know, information on web is kind rather than textbooks)<a class="footnote-reference brackets" href="#wiki" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a><a class="footnote-reference brackets" href="#mathoverflow" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>.</p>
+<p>In the following, I discuss a proof for time-inhomogeneous Markov processes. This problem is significant for some MCMC algorithms utilizing time-inhomogeneity.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>The following discussion is not rigorous in mathematical sense. I tried to describe as far as intuitive. However I assumed basics of the probability theory, such as the terms conditional probability, joint probability, and so on.</p>
@@ -401,8 +400,8 @@ See standard textbooks for details.</p></li>
 <h2>Mapping inhomogeneous to homogeneous<a class="headerlink" href="#mapping-inhomogeneous-to-homogeneous" title="Permalink to this heading">#</a></h2>
 <p>Time-inhomogeneous Markov processes can be mapped to time-homogeneous Markov processes. Some properties of time-homogeneous ones can be obtained when considering time-inhomogeneous cases<a class="footnote-reference brackets" href="#serfozo2009" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>.</p>
 <p>Let <span class="math notranslate nohighlight">\(\{X_t\}_t (t=1,2,\ldots)\)</span>  is a time-inhomogeneous Markov process. Then, the two-dimensional random variable <span class="math notranslate nohighlight">\(Y_{t} = (X_t, t)\)</span> obeys a time-homogeneous process.</p>
-<p>Here, we introduce a parameter <span class="math notranslate nohighlight">\(\tau := t\)</span>, which means time for a process <span class="math notranslate nohighlight">\(\{ Y_{\tau} \}_{\tau}=\{ X_{\tau}, t_{\tau} \}_{\tau}\)</span> (where <span class="math notranslate nohighlight">\(p(t_{\tau})=\delta_{t,\tau}\)</span>), because regarding <span class="math notranslate nohighlight">\(t\)</span> like an independent random variable makes the discussion clear.</p>
-<p>Starting from one-step evolution,  we show the transition probabiliy for <span class="math notranslate nohighlight">\(\{ Y_{\tau} \}_{\tau}\)</span> is independent of time <span class="math notranslate nohighlight">\(\tau\)</span> as follows.</p>
+<p>Here, I introduce a parameter <span class="math notranslate nohighlight">\(\tau := t\)</span>, which means time for a process <span class="math notranslate nohighlight">\(\{ Y_{\tau} \}_{\tau}=\{ X_{\tau}, t_{\tau} \}_{\tau}\)</span> (where <span class="math notranslate nohighlight">\(p(t_{\tau})=\delta_{t,\tau}\)</span>), because regarding <span class="math notranslate nohighlight">\(t\)</span> like an independent random variable makes the discussion clear.</p>
+<p>Starting from one-step evolution,  I show the transition probabiliy for <span class="math notranslate nohighlight">\(\{ Y_{\tau} \}_{\tau}\)</span> is independent of time <span class="math notranslate nohighlight">\(\tau\)</span> as follows.</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}p_{Y_{\tau+1}, Y_{\tau}}(y_{\tau+1}, y_{\tau}) &amp;= p_{Y_{\tau+1}|Y_{\tau}}(y_{\tau+1}|y_{\tau}) p_{Y_{\tau}}(y_{\tau}) \\
 &amp;= p_{X_{\tau+1},t+1|X_{\tau},t}(x_{\tau+1},t+1|x_{\tau},t) p_{X_{\tau},t}(x_{\tau},t) \\
@@ -411,10 +410,10 @@ See standard textbooks for details.</p></li>
 &amp;= p_{X_{\tau+1}|X_{\tau}}(x_{\tau+1}|x_{\tau}) p_{X_{\tau}}(x_{\tau}) \delta_{\tau,t} \\
 &amp;= p_{X_{t+1}|X_{t}}(x_{t+1}|x_{t}) p_{X_{\tau},t}(x_{\tau},t) \\
 \rightarrow p_{Y_{\tau+1}|Y_{\tau}}(y_{\tau+1}|y_{\tau})&amp;= p_{X_{t+1}|X_{t}}(x_{t+1}|x_{t})\end{split}\]</div>
-<p>Assuming the conditions finiteness, aperiodicity, and irreducibility for time-homogeneous process <span class="math notranslate nohighlight">\(\{ Y_{\tau} \}_{\tau}\)</span>,  it has a unique stationary distribution <span class="math notranslate nohighlight">\(p^{\mathrm{st}}_Y\)</span>. We obtain a unique stationary distribution for <span class="math notranslate nohighlight">\(\{ X_t \}_t\)</span> by margnalizing <span class="math notranslate nohighlight">\(t\)</span> of <span class="math notranslate nohighlight">\(p^{\mathrm{st}}_Y\)</span>.</p>
+<p>Assuming the conditions finiteness, aperiodicity, and irreducibility for time-homogeneous process <span class="math notranslate nohighlight">\(\{ Y_{\tau} \}_{\tau}\)</span>,  it has a unique stationary distribution <span class="math notranslate nohighlight">\(p^{\mathrm{st}}_Y\)</span>. A unique stationary distribution is obtained for <span class="math notranslate nohighlight">\(\{ X_t \}_t\)</span> by margnalizing <span class="math notranslate nohighlight">\(t\)</span> of <span class="math notranslate nohighlight">\(p^{\mathrm{st}}_Y\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[\sum_t p^{\mathrm{st}}_Y = p^{\mathrm{st}}_X\]</div>
-<p>Finally we get our target <span class="math notranslate nohighlight">\(p^{\mathrm{st}}_X\)</span>,  a unique stationary distribution for time-<strong>inhomogeneous</strong> Markov process.</p>
+<p>Finally I get our target <span class="math notranslate nohighlight">\(p^{\mathrm{st}}_X\)</span>,  a unique stationary distribution for time-<strong>inhomogeneous</strong> Markov process.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="wiki" role="doc-footnote">

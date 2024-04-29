@@ -302,7 +302,7 @@ mkdir docs
 #### ソース置き場をsrcに変更
 作業ディレクトリ直下で以下を実行．
 ```bash
-mkdir srcf
+mkdir src
 ```
 
 #### index.rstとconf.pyを移動
