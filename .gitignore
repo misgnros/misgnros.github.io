@@ -1,0 +1,5 @@
+_static/
+_templates/
+docs/__pycache__
+docs/_website
+docs/.doctrees

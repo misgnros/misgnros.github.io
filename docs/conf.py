@@ -94,13 +94,6 @@ blog_title = "misgnros.github.io"
 # a link to a archive pages generated for each tag, category, and year.
 # In addition, there are authors.html, languages.html, and locations.html
 # sidebars that link to author and location archive pages.
-html_sidebars = {
-    '**': [ 'ablog/postcard.html', 'navigation.html',
-            'ablog/recentposts.html', 'ablog/tagcloud.html',
-            'ablog/categories.html',  'ablog/archives.html',
-            'searchbox.html',
-            ],
-    }
 
 # -- Blog Feed Options --------------------------------------------------------
 
@@ -175,99 +168,96 @@ html_sidebars = {
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'misgnros.github.io'
-copyright = '2024, misgnros'
+copyright = '2025, misgnros'
 author = 'misgnros'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-  "sphinx.ext.githubpages",
-  'sphinx.ext.extlinks',
-  'sphinx.ext.intersphinx',
-  'sphinx.ext.todo',
-  "myst_parser",
-  "ablog",
-  "sphinx_design",
-  "sphinxcontrib.mermaid",
-  "sphinx_copybutton",
+	"sphinx.ext.githubpages",
+	'sphinx.ext.extlinks',
+	'sphinx.ext.todo',
+	"myst_parser",
+	"ablog",
+	'sphinx.ext.intersphinx',
+	"sphinx_design",
+	"sphinxcontrib.mermaid",
+	"sphinx_copybutton",
+	# "sphinxcontrib.googleanalytics",
 ]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'README.md']
 
+source_suffix = {
+	'.rst': 'restructuredtext',
+	'.md': 'markdown',
+}
 
-# ソースファイルの拡張子を.rstから.mdに変更
-# source_suffix = ['.rst', '.md']
-
-# インクルードパスを設定
-myst_include = ["*.md"]
-
-# myst_parserの拡張
 myst_enable_extensions = [
-    "amsmath",
-    "attrs_inline",
-    "colon_fence",
-    "deflist",
-    "dollarmath",
-    "fieldlist",
-    "html_admonition",
-    "html_image",
-    #"linkify",
-    "replacements",
-    "smartquotes",
-    "strikethrough",
-    "substitution",
-    "tasklist",
+	"amsmath",
+	"attrs_inline",
+	"colon_fence",
+	"deflist",
+	"dollarmath",
+	"fieldlist",
+	"html_admonition",
+	"html_image",
+	"linkify",
+	"replacements",
+	"smartquotes",
+	"strikethrough",
+	"substitution",
+	"tasklist",
 ]
+
+myst_linkify_fuzzy_links=False
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-# テーマを設定
 html_theme = 'pydata_sphinx_theme'
 
-# テーマのオプションを設定
 html_theme_options = {
-  "external_links": [
-      {
-          "url": "https://misgnros.github.io/blog/index.html",
-          "name": "Posts",
-        },
-      {
-            "url": "https://ablog.readthedocs.io/en/stable/",
-            "name": "ABlog Documentation",
-        },
-      {
-          "url": "https://myst-parser.readthedocs.io/en/latest/",
-          "name": "MyST-parser Documentation",
-        },
-    ],
-  "show_prev_next": False,
-  "logo": {
-        "text": "misgnros.github.io",
-#        "image_dark": "_static/logo-dark.svg",
-    },
+	"icon_links": [
+		{
+			"name": "GitHub",
+			"url": "https://github.com/misgnros/misgntos.github.io",
+			"icon": "fa-brands fa-github",
+		},
+	],
+	"external_links": [
+		{
+			"url": "https://misgnros.github.io/blog/index.html",
+			"name": "Posts",
+		},
+		{
+			"url": "https://github.com/misgnros/misgnros.github.io/releases",
+			"name": "Changelog",
+		},
+	],
+	"show_prev_next": False,
+	"logo": {
+		"text": "misgnros.github.io",
+	},
+	"analytics": {"google_analytics_id": "G-06Z6FZYZYE"},
+	"secondary_sidebar_items": {
+		"**": ["page-toc","ablog/categories.html", "ablog/tagcloud.html", "ablog/archives.html", "sourcelink"],
+		"index": ["page-toc","sourcelink"],
+	},
 }
 
-html_theme_options["analytics"] = {
-    "google_analytics_id": "G-06Z6FZYZYE",
-}
+html_sidebars = {'**': []}
 
-
-# setting primary sidebar in index page
-html_sidebars = {
-  "index": []
-}
+# Google analytics setting for all themes with sphinxcontrib-googleanalytics is loaded
+# googleanalytics_enabled = True
+# googleanalytics_id = "G-xxxxxxxx"
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 # html_static_path = ['_static']
-
-content_footer_items = {
-        "index":[]
-}
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -328,4 +318,3 @@ html_use_index = False
 
 # Output file base name for HTML help builder.
 # htmlhelp_basename = "doc"
-

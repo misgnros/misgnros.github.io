@@ -86,8 +86,8 @@ Assuming the conditions finiteness, aperiodicity, and irreducibility for time-ho
 
 Finally I get our target $p^{\mathrm{st}}_X$,  a unique stationary distribution for time-**inhomogeneous** Markov process.
 
-[^wiki]: [https://en.wikipedia.org/wiki/Discrete-time_Markov_chain#Steady-state_analysis_and_the_time-inhomogeneous_Markov_chain](https://en.wikipedia.org/wiki/Discrete-time_Markov_chain#Steady-state_analysis_and_the_time-inhomogeneous_Markov_chain)
+[^wiki]: https://en.wikipedia.org/wiki/Discrete-time_Markov_chain#Steady-state_analysis_and_the_time-inhomogeneous_Markov_chain
 
-[^mathoverflow]: [https://mathoverflow.net/questions/209907/stationary-distribution-for-time-inhomogeneous-markov-process](https://mathoverflow.net/questions/209907/stationary-distribution-for-time-inhomogeneous-markov-process)
+[^mathoverflow]: https://mathoverflow.net/questions/209907/stationary-distribution-for-time-inhomogeneous-markov-process
 
-[^serfozo2009]: Serfozo, R. (2009). Basics of applied stochastic processes. Springer.
+[^serfozo2009]: Serfozo, R. (2009). *Basics of applied stochastic processes*. Springer.

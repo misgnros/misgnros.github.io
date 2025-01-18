@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "misgnros-github-io"
+version = "0.1.0"
+description = ""
+authors = ["misgnros <igarashi.masanao@gmail.com>"]
+readme = "README.md"
+packages = [{include = "misgnros"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sphinxcontrib-googleanalytics = "^0.4"
+sphinx = "^8.0.2"
+myst-parser = {extras = ["linkify"], version = "^4.0.0"}
+pydata-sphinx-theme = "^0.16.1"
+ablog = "^0.11.12"
+sphinx-design = "^0.6.1"
+sphinxcontrib-mermaid = "^1.0.0"
+sphinx-copybutton = "^0.5.2"
+linkify-it-py = "^2.0.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
