@@ -627,7 +627,6 @@ files = [
 [package.dependencies]
 docutils = ">=0.19,<0.22"
 jinja2 = "*"
-linkify-it-py = {version = ">=2.0,<3.0", optional = true, markers = "extra == \"linkify\""}
 markdown-it-py = ">=3.0,<4.0"
 mdit-py-plugins = ">=0.4.1,<1.0"
 pyyaml = "*"
@@ -947,21 +946,6 @@ standalone = ["Sphinx (>=5)"]
 test = ["pytest"]
 
 [[package]]
-name = "sphinxcontrib-googleanalytics"
-version = "0.4"
-description = "Sphinx extension googleanalytics"
-optional = false
-python-versions = "*"
-groups = ["main"]
-files = [
-    {file = "sphinxcontrib-googleanalytics-0.4.tar.gz", hash = "sha256:4b19c1f0fce5df6c7da5633201b64a9e5b0cb3210a14fdb4134942ceee8c5d12"},
-    {file = "sphinxcontrib_googleanalytics-0.4-py3-none-any.whl", hash = "sha256:a6574983f9a58e5864ec10d34dc99914c4d647108b22c9249c8f0038b0cb18b3"},
-]
-
-[package.dependencies]
-Sphinx = ">=0.6"
-
-[[package]]
 name = "sphinxcontrib-htmlhelp"
 version = "2.1.0"
 description = "sphinxcontrib-htmlhelp is a sphinx extension which renders HTML help files"
@@ -1179,5 +1163,5 @@ watchmedo = ["PyYAML (>=3.10)"]
 
 [metadata]
 lock-version = "2.1"
-python-versions = "^3.10"
-content-hash = "68bb0bf3b47d6e9974596b964fe6c38563f06005636a60bdf9a4fab23adb25d0"
+python-versions = ">=3.10"
+content-hash = "9d29decc35f3b8e0cac9c13ed92301a7c8adb5e7e4184f9306ca27a5b1fc4c8b"
