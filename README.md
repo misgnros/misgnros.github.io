@@ -1,3 +1,3 @@
 # misgnros.github.io
 
-This is a repository for misgnros's GitHub Pages.
+This repository is for misgnros's GitHub Pages.
