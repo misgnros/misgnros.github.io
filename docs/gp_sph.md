@@ -351,7 +351,7 @@ html_theme_options = {
 # ...
   "external_links": [
       {
-          "url": "./blog/index.html",
+          "url": "https://<your page>/blog/index.html",
           "name": "Posts",
       }
   ],

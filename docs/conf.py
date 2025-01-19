@@ -219,14 +219,9 @@ myst_linkify_fuzzy_links=False
 
 html_theme = 'pydata_sphinx_theme'
 
+html_sidebars = {'**': []}
+
 html_theme_options = {
-	"icon_links": [
-		{
-			"name": "GitHub",
-			"url": "https://github.com/misgnros/misgntos.github.io",
-			"icon": "fa-brands fa-github",
-		},
-	],
 	"external_links": [
 		{
 			"url": "https://misgnros.github.io/blog/index.html",
@@ -237,18 +232,24 @@ html_theme_options = {
 			"name": "Changelog",
 		},
 	],
+	"icon_links": [
+		{
+			"name": "GitHub",
+			"url": "https://github.com/misgnros/misgnros.github.io",
+			"icon": "fa-brands fa-github",
+			"type": "fontawesome",
+		},
+	],
+	"secondary_sidebar_items": {
+		"**": ["page-toc","sourcelink"],
+		# "index": ["page-toc","sourcelink"],
+	},
 	"show_prev_next": False,
 	"logo": {
 		"text": "misgnros.github.io",
 	},
 	"analytics": {"google_analytics_id": "G-06Z6FZYZYE"},
-	"secondary_sidebar_items": {
-		"**": ["page-toc","ablog/categories.html", "ablog/tagcloud.html", "ablog/archives.html", "sourcelink"],
-		"index": ["page-toc","sourcelink"],
-	},
 }
-
-html_sidebars = {'**': []}
 
 # Google analytics setting for all themes with sphinxcontrib-googleanalytics is loaded
 # googleanalytics_enabled = True
