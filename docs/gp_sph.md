@@ -1,6 +1,5 @@
 ---
 blogpost: true
-date: 2024-02-10 # YYYY-MM-DD
 category: technical
 tags: Sphinx, GitHub Pages
 language: ja
