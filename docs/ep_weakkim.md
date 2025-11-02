@@ -100,7 +100,7 @@ Here, we return to the entropy flow and obtain the following substituting above,
 
 Therefore, the entropy flow is
 ```{math}
-\sigma &= \sum_i (m_{i,t} - m_{i,t-1}H_{i,t}) + \sum_{ij} J_{ij}(m_{j,t-1}H_{i,t} - m_{j,t}H_{i,t-1}) \\
+\sigma &= \sum_i (m_{i,t} - m_{i,t-1})H_{i,t} + \sum_{ij} J_{ij}(m_{j,t-1}H_{i,t} - m_{j,t}H_{i,t-1}) \\
 &+ \sum_{i,j<k} J_{ij}J_{ik}(C_{jk,t-1} - C_{jk,t}) + \sum_{ij} (J_{ij} D_{ij,t} - J_{ji} D_{ij,t-1}) + \frac{1}{2}\sum_{i} (H_{i,t}^2 - H_{i,t-1}^2).
 ```
 
