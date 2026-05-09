@@ -3,3 +3,5 @@ _templates/
 docs/__pycache__
 docs/_website
 docs/.doctrees
+CLAUDE.md
+.claude/
