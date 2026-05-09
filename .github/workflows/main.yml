@@ -22,25 +22,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install Poetry
-        run: pipx install poetry
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Setup uv
+        uses: astral-sh/setup-uv@v5
         with:
           python-version: "3.10"
-          cache: "poetry"
-      - name: Check Poetry
-        run: |
-          poetry --version
-          poetry config --list
+          enable-caching: true
       - name: Install dependencies
-        run: poetry install
+        run: uv sync
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Build with Sphinx
         run: |
           cd docs
-          poetry run ablog build
+          uv run ablog build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
