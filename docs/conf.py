@@ -175,44 +175,44 @@ author = "misgnros"
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-	"sphinx.ext.githubpages",
-	"sphinx.ext.extlinks",
-	"sphinx.ext.todo",
-	"myst_parser",
-	"ablog",
-	"sphinx.ext.intersphinx",
-	"sphinx_design",
-	"sphinxcontrib.mermaid",
-	"sphinx_copybutton",
-	# "sphinxcontrib.googleanalytics",
+    "sphinx.ext.githubpages",
+    "sphinx.ext.extlinks",
+    "sphinx.ext.todo",
+    "myst_parser",
+    "ablog",
+    "sphinx.ext.intersphinx",
+    "sphinx_design",
+    "sphinxcontrib.mermaid",
+    "sphinx_copybutton",
+    # "sphinxcontrib.googleanalytics",
 ]
 
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store", "README.md"]
 
 source_suffix = {
-	".rst": "restructuredtext",
-	".md": "markdown",
+    ".rst": "restructuredtext",
+    ".md": "markdown",
 }
 
 myst_enable_extensions = [
-	"amsmath",
-	"attrs_inline",
-	"colon_fence",
-	"deflist",
-	"dollarmath",
-	"fieldlist",
-	"html_admonition",
-	"html_image",
-	"linkify",
-	"replacements",
-	"smartquotes",
-	"strikethrough",
-	"substitution",
-	"tasklist",
+    "amsmath",
+    "attrs_inline",
+    "colon_fence",
+    "deflist",
+    "dollarmath",
+    "fieldlist",
+    "html_admonition",
+    "html_image",
+    "linkify",
+    "replacements",
+    "smartquotes",
+    "strikethrough",
+    "substitution",
+    "tasklist",
 ]
 
-myst_linkify_fuzzy_links=False
+myst_linkify_fuzzy_links = False
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -222,33 +222,42 @@ html_theme = "pydata_sphinx_theme"
 html_sidebars = {"**": []}
 
 html_theme_options = {
-	"external_links": [
-		{
-			"url": "https://misgnros.github.io/blog/index.html",
-			"name": "Posts",
-		},
-		{
-			"url": "https://github.com/misgnros/misgnros.github.io/releases",
-			"name": "Changelog",
-		},
-	],
-	"icon_links": [
-		{
-			"name": "GitHub",
-			"url": "https://github.com/misgnros/misgnros.github.io",
-			"icon": "fa-brands fa-github",
-			"type": "fontawesome",
-		},
-	],
-	"secondary_sidebar_items": {
-		"**": ["page-toc","ablog/tagcloud.html","ablog/categories.html","ablog/archives.html","sourcelink"],
-		"index": ["page-toc","sourcelink"],
-	},
-	"show_prev_next": False,
-	"logo": {
-		"text": "misgnros.github.io",
-	},
-	"analytics": {"google_analytics_id": "G-06Z6FZYZYE"},
+    "external_links": [
+        {
+            "url": "https://misgnros.github.io/blog/index.html",
+            "name": "Posts",
+        },
+        {
+            "url": "https://github.com/misgnros/misgnros.github.io/releases",
+            "name": "Changelog",
+        },
+    ],
+    "icon_links": [
+        {
+            "name": "GitHub",
+            "url": "https://github.com/misgnros/misgnros.github.io",
+            "icon": "fa-brands fa-github",
+            "type": "fontawesome",
+        },
+    ],
+    "secondary_sidebar_items": {
+        "**": [
+            "page-toc",
+            "ablog/tagcloud.html",
+            "ablog/categories.html",
+            "ablog/archives.html",
+            "sourcelink",
+        ],
+        "index": ["page-toc", "sourcelink"],
+        "cv": ["page-toc", "sourcelink"],
+        "publications": ["page-toc", "sourcelink"],
+        "interests": ["page-toc", "sourcelink"],
+    },
+    "show_prev_next": False,
+    "logo": {
+        "text": "misgnros.github.io",
+    },
+    "analytics": {"google_analytics_id": "G-06Z6FZYZYE"},
 }
 
 # Google analytics setting for all themes with sphinxcontrib-googleanalytics is loaded
