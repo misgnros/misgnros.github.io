@@ -20,16 +20,20 @@ By definition, the entropy flow of KIM is calculated as,
 \sigma &=\mathbb{E}[
 (\boldsymbol{s}_t - \boldsymbol{s}_{t-1}) ^{\top} \boldsymbol{H}_t 
 + \boldsymbol{s}_t ^{\top} \boldsymbol{J} \boldsymbol{s}_{t-1} - \boldsymbol{s}_{t-1} ^{\top} \boldsymbol{J} \boldsymbol{s}_t
--\psi_t(\boldsymbol{s}_{t-1}) + \psi_t(\boldsymbol{s}_t)
+-\psi_t(\boldsymbol{s}_{t-1}) + \psi_{t-1}(\boldsymbol{s}_t)
 ] \\
 &=\mathbb{E}[
 (\boldsymbol{s}_t - \boldsymbol{s}_{t-1}) ^{\top} \boldsymbol{H}_t 
 + \boldsymbol{s}_t ^{\top} (\boldsymbol{J} - \boldsymbol{J}^{\top}) \boldsymbol{s}_{t-1} 
--\psi_t(\boldsymbol{s}_{t-1}) + \psi_t(\boldsymbol{s}_t)
+-\psi_t(\boldsymbol{s}_{t-1}) + \psi_{t-1}(\boldsymbol{s}_t)
 ].
 ```
 
-Difinition and different expression of $\psi_t$ is
+The first term and the second term can be expressed by some known statistical quantities because they depend on spin variable $\boldsymbol{s}_t$ or the product of $\boldsymbol{s}_t$ and $\boldsymbol{s}_{t-1}$.
+However, the third term and the fourth term are described by a more complex function $\psi$ depending on spin variable.
+In the following, we try to calculate them under some assumptions.
+
+Definition and different expressions of $\psi_t$ are
 ```{math}
 \psi_t(\boldsymbol{s}) : &= \log \sum_{\boldsymbol{s}'} \exp [ \boldsymbol{s}^{'\top} \boldsymbol{h}_t(\boldsymbol{s})] \\
 &= \log \sum_{s'_1} \cdots \sum_{s'_N} \exp [
@@ -45,12 +49,12 @@ Here, $\cosh$ can be transformed as
 2\cosh(h_{i,t}(\boldsymbol{s})) = 2 \left( 1 + \frac{h_{i,t}^2}{2!} + \frac{h_{i,t}^4}{4!} + \cdots \right).
 ```
 
-Assuming that the magnitude of the effective field and interaction parameters are appropriately adjusted so that $| h_{i,t} | < 1$. Thus, higher-order terms can be ignored.
+Assuming that the magnitude of the effective field and interaction parameters are appropriately adjusted so that $| h_{i,t} | < 1$, higher-order terms can be ignored.
 ```{math}
 2\cosh(h_{i,t}(\boldsymbol{s})) \simeq 2 \left( 1 + \frac{h_{i,t}^2}{2!}\right)
 ```
 
-Using above,
+Using the above,
 ```{math}
 \log 2\cosh (h_{i,t}(\boldsymbol{s})) &\simeq \log 2 \left( 1 + \frac{h_{i,t}^2}{2!}\right) \\
 &= \log 2 + \log \left( 1 + \frac{h_{i,t}^2}{2!}\right).
@@ -104,6 +108,6 @@ Therefore, the entropy flow is
 &+ \sum_{i,j<k} J_{ij}J_{ik}(C_{jk,t-1} - C_{jk,t}) + \sum_{ij} (J_{ij} D_{ij,t} - J_{ji} D_{ij,t-1}) + \frac{1}{2}\sum_{i} (H_{i,t}^2 - H_{i,t-1}^2).
 ```
 
-Among these, all terms can be calculated using the mean-field approximation, as they are described by expectations, correlations at the same time, and correlations over one time step and constans[^1].
+Among these, all terms can be calculated using the mean-field approximation, as they are described by expectations, correlations at the same time, and correlations over one time step and constants[^1].
 
 [^1]: [Aguilera, M., Moosavi, S.A. & Shimazaki, H. A unifying framework for mean-field theories of asymmetric kinetic Ising systems. Nat Commun 12, 1197 (2021).](https://doi.org/10.1038/s41467-021-20890-5)
